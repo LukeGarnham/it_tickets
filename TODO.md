@@ -1,0 +1,20 @@
+- ~~Configure the relationship between tickets and categories, statuses and impacts.~~
+- Build factory(s) to generate dummy users and tickets.
+- Output all tickets to the frontend.
+- Build a dashboard view - list all tickets on the left.
+- Build views to view a ticket.
+- Build functionality to add a ticket.
+- Build functionality to edit a ticket.
+- Build functionality to delete a ticket.
+- Add a user registration and log in area.
+- Only show the logged in user's their tickets.
+- If IT Dept, add a menu option to view all tickets.
+- Add Policy to block users from CRUD functionality on tickets which aren't theirs (unless in IT Dept).
+- Limit which fields users can update and which can be updated by IT Dept.
+- Add functionality to upload and attach files to a ticket.
+- Add a messages area. This should include an audit trail of actions that have occurred, plus messages that are exchanged between the ticket owner(s) and assignee(s). Can - this include a 'message seen by' field?
+- Add email notifications so users are updated when relevant changes occur.
+- Add site notifications so users are updated when relevant changes occur.
+- Add some filtering and sorting mechanisms.
+- Add a data dashboard for IT Dept to analyse ticket data.
+- Add a user area which only admins can access.

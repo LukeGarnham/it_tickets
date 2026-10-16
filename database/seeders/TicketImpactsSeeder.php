@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -13,12 +12,13 @@ class TicketImpactsSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('ticket_impacts')->insert([
-            ['impact' => "I can do my task but the issue is annoying"],
-            ['impact' => "I can't do my task properly but I have a workaround"],
-            ['impact' => "I can't complete my task but can complete other work"],
-            ['impact' => "I can't complete my task and I have a deadline to meet"],
-            ['impact' => "I can't do any work"]
-        ]);
+        $now = now()->toDateTimeString();
+        DB::table('ticket_impacts')->upsert([
+            ['name' => "I can do my task but the issue is annoying", 'created_at' => $now, 'updated_at' => $now],
+            ['name' => "I can't do my task properly but I have a workaround", 'created_at' => $now, 'updated_at' => $now],
+            ['name' => "I can't complete my task but can complete other work", 'created_at' => $now, 'updated_at' => $now],
+            ['name' => "I can't complete my task and I have a deadline to meet", 'created_at' => $now, 'updated_at' => $now],
+            ['name' => "I can't do any work", 'created_at' => $now, 'updated_at' => $now]
+        ], ['name'], ['name']);
     }
 }

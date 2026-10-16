@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call([
-            TicketCategoriesSeeder::class,
+            CategoriesSeeder::class,
             TicketImpactsSeeder::class,
             TicketStatusesSeeder::class
         ]);
