@@ -1,5 +1,5 @@
 - ~~Configure the relationship between tickets and categories, statuses and impacts.~~
-- Build factory(s) to generate dummy users and tickets.
+- ~~Build factory(s) to generate dummy users and tickets.~~
 - Output all tickets to the frontend.
 - Build a dashboard view - list all tickets on the left.
 - Build views to view a ticket.
