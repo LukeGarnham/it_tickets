@@ -6,7 +6,7 @@ import { Link } from "@inertiajs/vue3";
     <nav>
         <ul>
             <Link>
-                <Link href="/">My Tickets</Link>
+                <Link href="/tickets">My Tickets</Link>
             </Link>
         </ul>
     </nav>

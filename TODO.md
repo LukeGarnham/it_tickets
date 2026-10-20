@@ -1,6 +1,10 @@
 - ~~Configure the relationship between tickets and categories, statuses and impacts.~~
 - ~~Build factory(s) to generate dummy users and tickets.~~
-- Output all tickets to the frontend.
+- ~~Output all tickets to the frontend.~~
+- Fix pagination not showing on the tickets page when no ?page query string.
+- Can pagination be dynamic so we only show some numbers (showing all 10 (or more) is cumbersome)!
+- Build a nav menu.
+- Create a sidebar component to display tickets.
 - Build a dashboard view - list all tickets on the left.
 - Build views to view a ticket.
 - Build functionality to add a ticket.

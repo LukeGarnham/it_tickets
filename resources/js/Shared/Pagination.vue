@@ -9,7 +9,7 @@ defineProps({
 
 <template>
     <div class="join">
-        <template v-for="link in links">
+        <template v-for="link in links" :key="link.url ?? link.label">
             <Link
                 v-if="link.url"
                 v-html="link.label"
@@ -21,10 +21,8 @@ defineProps({
             <span
                 v-else
                 v-html="link.label"
-                class="join-item btn btn-sm"
-                :class="link.url ? '' : 'btn-disabled'"
+                class="join-item btn btn-sm btn-disabled"
             ></span>
         </template>
     </div>
-    <!-- <pre>{{ JSON.stringify(links, null, 2) }}</pre> -->
 </template>
