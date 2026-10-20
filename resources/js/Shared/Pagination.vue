@@ -12,11 +12,11 @@ defineProps({
         <template v-for="link in links" :key="link.url ?? link.label">
             <Link
                 v-if="link.url"
-                v-html="link.label"
                 :href="link.url"
                 class="join-item btn btn-sm"
                 :class="link.active ? 'btn-active' : ''"
                 :preserve-scroll="preserveScroll"
+                ><span v-html="link.label"></span
             ></Link>
             <span
                 v-else
