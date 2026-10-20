@@ -2,6 +2,7 @@
 import { Link } from "@inertiajs/vue3";
 import Pagination from "@/Shared/Pagination.vue";
 import StatusBadge from "@/Shared/Ticket/StatusBadge.vue";
+import RightChevron from "../Icons/RightChevron.vue";
 
 defineProps({
     tickets: Object,
@@ -33,21 +34,10 @@ defineProps({
                             class="hidden @md:block"
                             :ticket-status="ticket.status"
                         />
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke-width="1.5"
-                            stroke="currentColor"
+                        <RightChevron
                             class="size-[1.2em] hidden @md:block"
                             aria-label="Select ticket"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                d="m8.25 4.5 7.5 7.5-7.5 7.5"
-                            />
-                        </svg>
+                        />
                     </div>
                 </Link>
             </li>

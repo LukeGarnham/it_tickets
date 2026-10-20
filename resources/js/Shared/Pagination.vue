@@ -1,5 +1,7 @@
 <script setup>
 import { Link } from "@inertiajs/vue3";
+import RightChevron from "./Icons/RightChevron.vue";
+import LeftChevron from "./Icons/LeftChevron.vue";
 
 defineProps({
     links: Array,
@@ -24,26 +26,14 @@ defineProps({
                           : 'Select page ' + link.label
                 "
             >
-                <svg
-                    v-if="index === 0 || index === links.length - 1"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
+                <LeftChevron
+                    v-if="index === 0"
                     class="size-[1em]"
-                    aria-hidden="true"
-                >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        :d="
-                            index === 0
-                                ? 'M15.75 19.5 8.25 12l7.5-7.5'
-                                : 'M8.25 4.5 15.75 12l-7.5 7.5'
-                        "
-                    />
-                </svg>
+                    aria-hidden="true" />
+                <RightChevron
+                    v-else-if="index === links.length - 1"
+                    class="size-[1em]"
+                    aria-hidden="true" />
                 <span v-else v-html="link.label"></span
             ></Link>
             <span
@@ -57,26 +47,16 @@ defineProps({
                           : ''
                 "
             >
-                <svg
-                    v-if="index === 0 || index === links.length - 1"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
+                <LeftChevron
+                    v-if="index === 0"
                     class="size-[1em]"
                     aria-hidden="true"
-                >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        :d="
-                            index === 0
-                                ? 'M15.75 19.5 8.25 12l7.5-7.5'
-                                : 'M8.25 4.5 15.75 12l-7.5 7.5'
-                        "
-                    />
-                </svg>
+                />
+                <RightChevron
+                    v-else-if="index === links.length - 1"
+                    class="size-[1em]"
+                    aria-hidden="true"
+                />
                 <span v-else v-html="link.label"></span>
             </span>
         </template>
