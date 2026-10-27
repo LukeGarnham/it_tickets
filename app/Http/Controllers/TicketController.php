@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ticket;
+use App\Queries\TicketQuery;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -11,9 +12,17 @@ class TicketController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(TicketQuery $ticketQuery, Request $request)
     {
-        return Inertia::render('ticket/Index');
+        $filters = [];
+        if ($search = $request->input('search')) {
+            $filters['search']  = $search;
+        }
+        $tickets = $ticketQuery->paginate($filters, 10);
+        return Inertia::render('ticket/Index', [
+            'tickets' => $tickets,
+            'filters' => $filters,
+        ]);
     }
 
     /**
@@ -35,12 +44,13 @@ class TicketController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Ticket $ticket)
+    public function show(Ticket $ticket, TicketQuery $ticketQuery)
     {
         // TODO - authorise - check the authenticated user has permission to view this ticket.
-        // TODO: Filter the data to only send through the fields that are needed.
+        $tickets = $ticketQuery->paginate([], 10);
         return Inertia::render('ticket/Show', [
-            'currentTicket' => $ticket
+            'currentTicket' => $ticket,
+            'tickets' => $tickets
         ]);
     }
 
